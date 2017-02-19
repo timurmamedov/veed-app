@@ -56,30 +56,28 @@
 
     // Camera
     this.camera = function(){
-      this.camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, window.innerHeight / 2, window.innerHeight / - 2, 1, 1000 );
+      this.camera = new THREE.OrthographicCamera( window.innerWidth / - 2, window.innerWidth / 2, document.body.scrollHeight / 2, document.body.scrollHeight / - 2, 1, 1000 );
       this.camera.position.x = 500;
       this.camera.position.y = 1;
       this.camera.position.z = 100;
-      // cameraObj.fov = ( 360 / Math.PI ) * Math.atan( tanFOV * ( window.innerHeight / windowHeight ) );
-      this.camera.aspect = window.innerWidth / window.innerHeight;
-     
+      this.camera.aspect = window.innerWidth / document.body.scrollHeight;
       this.camera.lookAt(this.scene.position);
 
       cameraObj = this.camera;
 
-       this.camera.updateProjectionMatrix();
+      this.camera.updateProjectionMatrix();
     }
 
     // Renderer
     this.renderer = function(){
       this.renderer = new THREE.WebGLRenderer({antialias: true});
-      this.renderer.setSize( window.innerWidth, window.innerHeight );
+      this.renderer.setSize( window.innerWidth, document.body.scrollHeight );
       this.renderer.setClearColor( 0xffffff , 1 );
       this.renderer.shadowMapEnabled = true;
       this.renderer.shadowMapType = THREE.PCFSoftShadowMap;
       // var scope = this;
       // scope.renderer.render( scope.scene, scope.camera );
-      document.getElementById( 'root' ).appendChild(this.renderer.domElement);
+      document.body.appendChild(this.renderer.domElement);
 
       rendererObj = this.renderer;
     }
@@ -115,17 +113,12 @@
 
     function resize() {
 
-      // cameraObj.aspect = window.innerWidth / window.innerHeight;
-      // cameraObj.aspect = (cameraObj.right - cameraObj.left) / (cameraObj.top - cameraObj.bottom);
-      
-      // cameraObj.fov = ( 360 / Math.PI ) * Math.atan( tanFOV * ( window.innerHeight / windowHeight ) );
-
-      rendererObj.setSize(window.innerWidth, window.innerHeight);
+      rendererObj.setSize(window.innerWidth, document.body.scrollHeight);
 
       cameraObj.left = window.innerWidth / - 2;
       cameraObj.right = window.innerWidth / 2;
-      cameraObj.top = window.innerHeight / 2;
-      cameraObj.bottom = window.innerHeight / - 2;
+      cameraObj.top = document.body.scrollHeight / 2;
+      cameraObj.bottom = document.body.scrollHeight / - 2;
       cameraObj.updateProjectionMatrix();
     }
 
