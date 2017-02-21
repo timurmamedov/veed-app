@@ -1,7 +1,16 @@
+@font-face {
+  font-family: 'CircularB';
+  src: url('./fonts/circularb.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/circularb.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/circularb.woff2') format('woff2'), 
+       url('./fonts/circularb.woff') format('woff'),
+       url('./fonts/circularb.ttf')  format('truetype'); 
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'CircularB', sans-serif;
 }
 
 canvas {
@@ -14,3 +23,4 @@ canvas {
     margin: 0;
     padding: 0;
 }
+
