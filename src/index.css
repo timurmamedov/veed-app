@@ -1,26 +1,35 @@
 @font-face {
   font-family: 'CircularB';
-  src: url('./fonts/circularb.eot'); /* IE9 Compat Modes */
-  src: url('./fonts/circularb.eot?#iefix') format('embedded-opentype'),
-       url('./fonts/circularb.woff2') format('woff2'), 
-       url('./fonts/circularb.woff') format('woff'),
-       url('./fonts/circularb.ttf')  format('truetype'); 
+  src: url('./fonts/circularb/circularb.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/circularb/circularb.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/circularb/circularb.woff2') format('woff2'), 
+       url('./fonts/circularb/circularb.woff') format('woff'),
+       url('./fonts/circularb/circularb.ttf')  format('truetype'); 
+}
+
+@font-face {
+  font-family: 'CircularN';
+  src: url('./fonts/circularn/circularn.eot'); /* IE9 Compat Modes */
+  src: url('./fonts/circularn/circularn.eot?#iefix') format('embedded-opentype'),
+       url('./fonts/circularn/circularn.woff2') format('woff2'), 
+       url('./fonts/circularn/circularn.woff') format('woff'),
+       url('./fonts/circularn/circularn.ttf')  format('truetype'); 
 }
 
 body {
-  margin: 0;
-  padding: 0;
+  margin     : 0;
+  padding    : 0;
   font-family: 'CircularB', sans-serif;
 }
 
 canvas {
-    z-index: -9999;
+    z-index : -9999;
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+    top     : 0;
+    left    : 0;
+    width   : 100%;
+    height  : 100%;
+    margin  : 0;
+    padding : 0;
 }
 

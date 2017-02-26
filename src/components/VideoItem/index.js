@@ -2,7 +2,7 @@ import React, { PropTypes, Component } from 'react';
 import classnames                      from 'classnames';
 
 import './style.css';
-import testVideo from './hello.mp4';
+import testVideo from './ladbible.mp4';
 import Video     from 'react-html5video';
 
 export default class VideoItem extends Component {
